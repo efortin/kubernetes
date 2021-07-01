@@ -19,10 +19,9 @@ package util
 import "strings"
 
 const EmptyString = ""
-const Dash = "-"
 
 // This method normalizes go package name and avoid issue with
 // DNS1123 compliant names can lead to uncompilable package ( example with dash character )
 func NormalizeGoPackageName(packageName string) string {
-	return strings.ReplaceAll(packageName, Dash, EmptyString)
+	return strings.ReplaceAll(packageName, "-", EmptyString)
 }
