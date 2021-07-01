@@ -24,15 +24,12 @@ import (
 )
 
 func TestGroupPackage(t *testing.T) {
-
 	t.Run("with dash in package name should be remove in go package", func(t *testing.T) {
 		generatedPackage := groupPackage(genutil.EmptyString, types.GroupVersions{
 			PackageName: "code-gen",
 			Group:       genutil.EmptyString,
 		}, nil)
-
 		assert.NotNil(t, generatedPackage)
 		assert.Equal(t, "codegen", generatedPackage.Name())
 	})
-
 }
